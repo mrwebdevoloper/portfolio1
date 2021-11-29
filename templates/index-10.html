@@ -1,0 +1,603 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Creating a professional, modern and sophisticated online resume website is easy with Martyn CV / Resume">
+<meta name="keywords" content="CV, resume, card, vcard, online cv, online resume, professional resume, portfolio, one page, bootstrap responsive, creative html template, creative design, parallax, personal">
+
+<!-- SITE TITLE -->
+<title>Kamronbek Jo'raboyev</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png'%}">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/animate.css'%}">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/ionicons.min.css'%}">
+<link rel="stylesheet" href="{% static 'assets/css/themify-icons.css'%}">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/all.min.css'%}">
+<!-- Flaticon Font CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/flaticon.css'%}">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="{% static 'assets/owlcarousel/css/owl.carousel.min.css'%}">
+<link rel="stylesheet" href="{% static 'assets/owlcarousel/css/owl.theme.css'%}">
+<link rel="stylesheet" href="{% static 'assets/owlcarousel/css/owl.theme.default.min.css'%}">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css'%}">
+<!-- Scrollbar Css -->
+<link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css'%}">
+<!-- Style CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+<link rel="stylesheet" href="{% static 'assets/css/responsive.css'%}">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-nav" data-offset="110">
+
+<!-- LOADER -->
+<div class="preloader">
+    <div class="loader">
+		<div class="loader-inner ball-scale">
+          <div></div>
+          <div></div>
+          <div></div>
+		</div>
+	</div>
+</div>
+<!-- END LOADER --> 
+
+<!-- START HEADER -->
+<header class="header_wrap fixed-top dark_skin hover_menu_style2 sidebar_menu side_menu_mobile mobile_menu_light_skin transparent-header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg"> 
+    	<a class="navbar-brand page-scroll" href="#home_section">
+            {% for i in logo %}
+        	    <img class="logo_light" src="{{ i.photo.url }}" alt="logo" />
+            {% endfor %}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        	<a class="navbar-brand page-scroll" href="#home_section">
+                <img class="logo_light" src="{% static 'assets/images/logo_white.png'%}" alt="logo" />
+                <img class="logo_dark" src="{% static 'assets/images/logo_dark.png'%}" alt="logo" />
+                <img class="logo_default" src="{% static 'assets/images/logo_dark.png'%}" alt="logo" />
+            </a>
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link active page-scroll" href="#home_section">Bosh Sahifa</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="#about">Men haqimda</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="#services">Xizmatlar</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="#portfolio">Tajriba</a>
+                </li>
+               
+                <li>
+                    <a class="nav-link page-scroll" href="#blog">Ma'qolalar</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="#contact">Bog'lanish</a>
+                </li>
+               
+            </ul>
+            <div class="bottom_content">
+                <ul class="contact_info list_none">
+                    <li>
+                        <span class="ti-mobile"></span>
+                        <p>{{ aboutme.phone }}</p>
+                    </li>
+                    <li>
+                        <span class="ti-email"></span>
+                        <a href="{{ aboutme.email }}">{{ aboutme.email }}</a>
+                    </li>
+                    <li>
+                        <span class="ti-location-pin"></span>
+                        <address>{{ aboutme.address }}</address>
+                    </li>
+                </ul>
+                <ul class="list_none social_icons">
+                    {% for d in socials %}
+                        <li><a href="{{ d.url }}" class="{{ d.cls }}"><i class="fab fa-{{ d.icon }}"></i></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </div>
+</header>
+<!-- START HEADER --> 
+
+<div class="page-content">
+
+<!-- START SECTION BANNER -->
+<section id="home_section" class="banner_section full_screen background_bg fixed_bg overlay_bg_blue_80" data-img-src="{% static 'assets/images/banner_img2.jpg'%}">
+    <div class="wave_shape">
+        <img src="{% static 'assets/images/wave_shape.png'%}" alt="wave_shape" />
+    </div>
+    <div class="banner_slide_content">
+        <div class="container"><!-- STRART CONTAINER -->
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div class="banner_content text-center text_white">
+                        <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.02s">Mening ismim Kamronbek Jo'raboyev</h2>
+                        <div id="typed-strings" class="d-none">
+                            <b>SSM Manager</b> <b>Web Developer</b>
+                        </div>
+                        <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">I'm a Freelance <span id="typed-text" class="text_default"></span></h4>
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.04s">Assalomu alaykum | Mening Web sahifamga Hush kelibsiz</p>
+                        <a href="#" class="btn btn-default rounded-0 animation" data-animation="fadeInUp" data-animation-delay="0.05s">Download CV</a>
+                        <a href="#" class="btn btn-outline-white rounded-0 animation" data-animation="fadeInUp" data-animation-delay="0.05s">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- END CONTAINER-->
+    </div>
+</section>
+<!-- END SECTION BANNER --> 
+
+<!-- START SECTION ABOUT US -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-5">
+                	<div class="about_img3 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    	<img src="{{ aboutme.photo.url }}" alt="about_img3"/>
+                        <div class="border_shape2"></div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                	<div class="about_info animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <div class="heading_s1 mb-3"> 
+                          <h2>About Me</h2>
+                        </div>
+                        <p>{% autoescape off %}{{ aboutme.about }}{% endautoescape %}</p>
+                        <hr>
+                        <div class="heading_s1 mb-4"> 
+                            <h5>Basic Info</h5>
+                        </div>
+                        <ul class="profile_info_style2 list_none">
+                            <li>
+                                <span class="title">Date of birth:</span>
+                                <p>{{ aboutme.birthday }}</p>
+                            </li>
+                            <li>
+                                <span class="title">Phone No:</span>
+                                <p>{{ aboutme.phone }}</p>
+                            </li>
+                            <li>
+                                <span class="title">Email:</span>
+                                <a href="{{ aboutme.email }}">{{ aboutme.email }}</a>
+                            </li>
+                            <li>
+                                <span class="title">Address:</span>
+                                <p> {{ aboutme.address }} </p>
+                            </li>
+                            <li>
+                                <span class="title">Website:</span>
+                               <a href="my-first-contact-portfolio.netlify.app">my-first-contact-portfolio.netlify.app</a>
+                            </li>
+                            <li>
+                                <span class="title">Work</span>
+                                <p>{{ aboutme.work }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- END SECTION ABOUT US -->
+
+<!-- START SECTION COUNTER --> 
+<section class="counter_wrap bg_gray">
+    <div class="container">
+    	<div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-9 text-center">
+            	<div class="heading_s1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                	<h2>My Skills</h2>
+                </div>
+                 <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+            </div>
+        </div>
+        <div class="row animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+        	<div class="col-md-12">
+                <div class="skills skills_list_type">
+                    {% for c in skills %}
+                	<div class="skill_box">
+                    	<div class="skill_content pr_style1">
+                            <div class="progrees_bar_text">
+                                <b>{{ c.name }}</b>
+                            </div>
+                            <div class="progress">
+                              <div class="count_pr"><span class="counter">{{ c.percent }}</span>%</div>
+                              <div class="progress-bar d-block" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                           </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION COUNTER -->
+
+
+
+<!-- START SECTION COUNTER --> 
+<section class="counter_wrap background_bg overlay_bg_blue_70 fixed_bg" data-img-src="{% static 'assets/images/counter_bg.jpg'%}">
+    <div class="container">
+        <div class="row">
+            {% for i in icons %}
+                <div class="col-lg-4 col-md-4 col-6">
+                    <div class="box_counter text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <i class="{{ i.icon }}"></i>
+                        <h3 class="counter_text"><span class="counter">{{ i.count }}</span>+</h3>
+                        <p>{{ i.name }}</p>
+                    </div>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END SECTION COUNTER -->
+
+<!-- START SECTION PORTFOLIO -->
+<section id="portfolio" class="pb_70">
+    <div class="container">
+    	<div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-9 text-center">
+                <div class="heading_s1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <h2>My Portfolio</h2>
+                </div>
+                <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="cleafix small_divider"></div>
+            </div>
+        </div>
+        <div class="row mb-4 mb-md-5">
+            <div class="col-md-12 text-center">
+                <ul class="list_none grid_filter animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                    {% for i in category %}
+                        <li><a href="#" {% if i == category.first %} class="current" {% endif %} data-filter=".{{ i.name }}">{{ i.name }}|{{ i.portfolio.count }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="grid_container gutter_medium work_col3 portfolio_gallery portfolio_style1 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                	
+                    <!-- START PORTFOLIO ITEM -->
+                    {% for n in  category%}
+                        {% for p in n.portfolio.all %}
+                            <li class="grid_item {{ n.name }}">
+                                <div class="portfolio_item">
+                                    <a href="#" class="image_link">
+                                        <img src="{{ p.photo.first.photo.url }}" alt="image">
+                                    </a>
+                                        <div class="portfolio_content">
+                                            <div class="link_container">
+                                                <a href="{{ p.photo.first.photo.url }}" class="image_popup"><i class="ion-image"></i></a>
+                                                <a href="/portdetail/{{ p.id }}/" ><i class="ion-plus"></i></a>
+                                            </div>
+                                            <h5><a href="/portdetail/{{ p.id }}/" >{{ p.project_name }}</a></h5>
+                                            <p>{{ p.category.name }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                   {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio_modal modal fade" id="pr_modal">
+    	<div class="modal-dialog modal-xl modal-dialog-centered">	
+        	<div class="modal-content">
+            	<div class="modal-body">
+                	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="carousel_slider owl-carousel owl-theme" data-margin="20" data-dots="false" data-loop="true" data-nav="true" data-autoplay="true" data-items="1">
+                                <div class="item">
+                                    <img src="{% static 'assets/images/portfolio_img1.jpg'%}" alt="portfolio_img1"/>
+                                </div>
+                                <div class="item">
+                                    <img src="{% static 'assets/images/portfolio_img2.jpg'%}" alt="portfolio_img2"/>
+                                </div>
+                                <div class="item">
+                                    <img src="{% static 'assets/images/portfolio_img3.jpg'%}" alt="portfolio_img3"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul class="list_none portfolio_info_box">
+                                <li><span class="text-uppercase">CLIENT</span>Martyn Vorm</li>
+                                <li><span class="text-uppercase">Date</span>Aprile 2018</li>
+                                <li><span class="text-uppercase">Category</span>Design, Branding</li>
+                                <li><span class="text-uppercase">PROJECT link</span>www.sitename.com</li>
+                                <li><span class="text-uppercase">SHARE </span>
+                                    <ul class="list_none social_icons border_social rounded_social social_white">
+                                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="pf_content">	
+                                <div class="heading_s1">
+                                    <h2>Branded Products</h2>
+                                </div>
+                                <p>Nam eget neque pellentesque efficitur neque at, ornare orci. Vestibulum ligula orci volutpat id aliquet eget, consectetur eget ante. Duis pharetra for nec rhoncus felis sagittis nec amet ultricies lorem.</p>
+                                <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.Iipsum dolor sit amet consectetur adipiscing elitllus blandit massa enim.</p>
+                            </div>
+                        </div>
+                    </div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION PORTFOLIO -->
+
+<!-- START WORK EXPERIENCES -->
+<section id="experience" class="bg_gray pb_70">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-7 col-md-9 text-center">
+            	<div class="heading_s1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                	<h2>My Resume</h2>
+                </div>
+                <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                <div class="small_divider clearfix"></div>
+            </div>
+        </div>
+        <div class="row animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+            {% for i in resume %}
+            <div class="col-md-6">
+            	<div class="timeline_title">
+                	<i class="fas fa-graduation-cap"></i><h5>Education</h5>
+                </div>
+                <div class="timeline">
+                    <div class="timeline_box">
+                        <div class="timeline_content">
+                            <p><span class="text_default">{{ i.years }}</span>{{ i.staff }}</p>
+                            <h4>{{ i.company }}</h4>
+                            <hr>
+                            <p>{{ i.text|truncatechars:80  }}</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END WORK EXPERIENCES -->
+
+
+
+<!-- START SECTION BLOG -->
+<section id="blog" class="pb_70 bg_gray">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-7 col-md-9 text-center">
+            	<div class="heading_s1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                	<h2>My Letest Blog</h2>
+                </div>
+                <p class="animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="clearfix small_divider"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+            
+            {% for m in blog %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog_post blog_style2">
+                        <div class="blog_img">
+                            <a href="/blogdetail/{{ m.id }}/">
+                                <img src="{{ m.photo.url }}" alt="blog_small_img1">
+                            </a>
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_text">
+                                <div class="post_category"><a href="/blogdetail/{{ m.id }}/">{{ m.name }}</a></div>
+                                <h5 class="blog_title"><a href="/blogdetail/{{ m.id }}/">{{ m.title }}</a></h5>
+                                <ul class="list_none blog_meta">
+                                    <li><a href="/blogdetail/{{ m.id }}/"><i class="ion-calendar"></i>{{ m.date|date:'d..m.y H:i' }}</a></li>
+                                    <li><a href="/blogdetail/{{ m.id }}/"><i class="ion-chatboxes"></i>2 Comment</a></li>
+                                </ul>
+                                <p>{% autoescape off %}{{ m.text|truncatechars:100 }}{% endautoescape %}</p>
+                                <a href="/blogdetail/{{ m.id }}/" class="read_more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END SECTION BLOG -->
+
+<!-- START SECTION CONTACT -->
+<section id="contact">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-lg-8 col-md-12 text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+            	<div class="heading_s1">
+                	<h2>Contact Me</h2>
+                </div>
+                <p>Savol va takliflar uchun:</p>
+                <div class="small_divider clearfix"></div>
+            	<div class="field_form">
+                    <form action="/send-msg/" method="POST" >
+                        {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <input  placeholder="Enter Name *" class="form-control" name="name" type="text">
+                         </div>
+                        <div class="form-group col-md-4">
+                            <input required="required" placeholder="Enter Email *"  class="form-control" name="email" type="email">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input placeholder="Enter Subject" class="form-control" name="subject" type="text">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <textarea required="required" placeholder="Message *" class="form-control" name="message" rows="5"></textarea>
+                        </div>
+                        <div class="col-lg-12 text-center">
+                            <!-- <input type="submit" class="btn btn-default rounded-0 btn-block"  placeholder="submit" /> -->
+                            <button type="submit" class="btn btn-default rounded-0 btn-block" >submit</button>
+                            
+                        </div>
+                        
+                    </div>
+                </form>		
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="small_divider clearfix"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+            {% for i in icon %}
+                <div class="col-lg-3 col-md-4 text-center">
+                    <div class="icon_box icon_box_style_5">
+                        <div class="box_icon mb-3">	
+                            <i class="{{ i.icon }}"></i>
+                        </div>
+                        <div class="icon_box_content">
+                            <h5 class="text-uppercase py-md-2">{{ i.name }}</h5>
+                            <p>{{ i.difficult }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- START SECTION CONTACT -->
+
+<!-- START FOOTER SECTION --> 
+<footer class="footer_dark bg_black4 footer_shape">
+	<div class="top_footer small_pb">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8 col-md-9 text-center">
+                	<div class="footer_logo">
+                    	<a href="index.html"><img alt="logo" src="{% static 'assets/images/logo_white.png'%}"></a>
+                    </div>
+                    <h6 class="widget_title pt-3">Subscribe Our Newsletter</h6>
+                    <div class="newsletter_form newslattter_small">
+                        <form> 
+                            <input type="text" required="" placeholder="Enter Email Address">
+                            <button type="submit" title="Subscribe" class="btn btn-default rounded-0" name="submit" value="Submit">
+                            	subscribe
+                            </button>
+                        </form>
+                    </div>
+                    <ul class="list_none footer_link text-center footer_nav">
+                    	<li><a href="#">Bosh sahifa</a></li>
+                        <li><a href="#">Men Haqimda</a></li>
+                        <li><a href="#">Xizmatlar</a></li>
+                        <li><a href="#">Ma'qolalar</a></li>
+                        <li><a href="#">Bog'lanish</a></li>
+                    </ul>
+                    <ul class="list_none social_icons social_white pt-4">
+                       {% for d in socials %}
+                         <li><a href="{{ d.url }}" class="{{ d.cls }}"><i class="fab fa-{{ d.icon }}"></i></a></li>
+                       {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_footer bg_black2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright m-0 text-center">© 2021 All Rights Reserved By <a href="#" class="text_default">Kamronbek</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER SECTION --> 
+
+</div>
+
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+
+<!-- Latest jQuery --> 
+<script src="{% static 'assets/js/jquery-1.12.4.min.js'%}"></script> 
+<!-- jquery-ui --> 
+<script src="{% static 'assets/js/jquery-ui.js'%}"></script>
+<!-- popper min js --> 
+<script src="{% static 'assets/js/popper.min.js'%}"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script> 
+<!-- owl-carousel min js  --> 
+<script src="{% static 'assets/owlcarousel/js/owl.carousel.min.js'%}"></script> 
+<!-- magnific-popup min js  --> 
+<script src="{% static 'assets/js/magnific-popup.min.js'%}"></script> 
+<!-- waypoints min js  --> 
+<script src="{% static 'assets/js/waypoints.min.js'%}"></script> 
+<!-- parallax js  --> 
+<script src="{% static 'assets/js/parallax.js'%}"></script> 
+<!-- countdown js  --> 
+<script src="{% static 'assets/js/jquery.countdown.min.js'%}"></script> 
+<!-- jquery.counterup.min js --> 
+<script src="{% static 'assets/js/jquery.counterup.min.js'%}"></script>
+<!-- jquery.parallax-scroll js -->
+<script src="{% static 'assets/js/jquery.parallax-scroll.js'%}"></script>
+<!-- imagesloaded js -->
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js'%}"></script>
+<!-- isotope min js --> 
+<script src="{% static 'assets/js/isotope.min.js'%}"></script>
+<!-- vanilla-tilt.babel.min js -->
+<script src="{% static 'assets/js/vanilla-tilt.babel.min.js'%}"></script> 
+<!-- typed.min js --> 
+<script src="{% static 'assets/js/typed.min.js'%}"></script>
+<!-- typed text js --> 
+<script src="{% static 'assets/js/typed-text.js'%}"></script>
+<!-- mCustomScrollbar.concat.min js -->
+<script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+<!-- scripts js --> 
+<script src="{% static 'assets/js/scripts.js'%}"></script>
+
+</body>
+</html>
